@@ -7,6 +7,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
@@ -34,6 +38,10 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
     @Override
     public void onPostExecute(String json) {
-
+        Gson gson = new Gson();
+        Type type = new TypeToken<ArrayList<Arenas>>() {}.getType();
+        ArrayList<Arenas> list = gson.fromJson(json, type);
+        arenasArrayList.addAll(list);
+        adapter.notifyDataSetChanged();
     }
 }
