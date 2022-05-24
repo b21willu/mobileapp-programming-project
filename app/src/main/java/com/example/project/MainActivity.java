@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
 
     RecyclerView recyclerView;
     ArrayList<Arenas> arenasArrayList;
@@ -27,4 +27,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
+    @Override
+    public void onPostExecute(String json) {
+
+    }
 }
