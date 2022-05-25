@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Project</string>
-    <string name="action_internal_web">Internal Web Page</string>
+    <string name="action_internal_web">About us</string>
+    <string name="about_action">About us</string>
 </resources>

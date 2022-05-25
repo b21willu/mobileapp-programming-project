@@ -1,10 +1,9 @@
 package com.example.project;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.webkit.WebView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -24,13 +23,6 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     ArrayList<Arenas> arenasArrayList;
     RecyclerViewAdapter adapter;
 
-    WebView myWebView;
-
-    public void showInternalWebPage() {
-        myWebView.loadUrl("file:///android_asset/about.html");
-    }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,13 +37,11 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         adapter = new RecyclerViewAdapter(arenasArrayList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
-
-        myWebView = findViewById(R.id.my_webview);
-        myWebView.getSettings().setJavaScriptEnabled(true);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -59,11 +49,15 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_internal_web) {
-            showInternalWebPage();
-            Log.d("==>","Will display internal web page");
-            return true;
+
+        if (id == R.id.internal_web) {
+            Intent intent = new Intent(MainActivity.this,AboutActivity.class);
+            startActivity(intent);
+            return false;
         }
 
         return super.onOptionsItemSelected(item);

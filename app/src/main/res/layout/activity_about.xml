@@ -6,10 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".AboutActivity">
 
-    <WebView
-        android:id="@+id/my_webview"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about_action"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
