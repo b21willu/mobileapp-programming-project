@@ -26,9 +26,10 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
     WebView myWebView;
 
-    public void showInternalWebPage(){
+    public void showInternalWebPage() {
         myWebView.loadUrl("file:///android_asset/about.html");
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
