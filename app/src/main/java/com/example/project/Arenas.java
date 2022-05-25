@@ -1,14 +1,14 @@
 package com.example.project;
 
 public class Arenas {
-    private final String id;
+    private final String ID;
     private final String name;
     private final String company;
     private final String location;
     private final int size;
 
-    public Arenas(String id, String name, String company, String location, int size  ) {
-        this.id = id;
+    public Arenas(String ID, String name, String company, String location, int size  ) {
+        this.ID = ID;
         this.name = name;
         this.company = company;
         this.location = location;
@@ -16,7 +16,7 @@ public class Arenas {
     }
 
     public String getId() {
-        return id;
+        return ID;
     }
 
     public String getName() {
