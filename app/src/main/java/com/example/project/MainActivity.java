@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         if (id == R.id.internal_web) {
             Intent intent = new Intent(MainActivity.this,AboutActivity.class);
             startActivity(intent);
-            return false;
         }
 
         return super.onOptionsItemSelected(item);
