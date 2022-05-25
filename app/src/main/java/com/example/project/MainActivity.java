@@ -1,6 +1,7 @@
 package com.example.project;
 
 import android.os.Bundle;
+import android.webkit.WebView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -20,6 +21,13 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     ArrayList<Arenas> arenasArrayList;
     RecyclerViewAdapter adapter;
 
+    WebView myWebView;
+
+    public void showInternalWebPage(){
+        myWebView.loadUrl("file:///android_asset/about.html");
+        // TODO: Add your code for showing internal web page here
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +42,12 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         adapter = new RecyclerViewAdapter(arenasArrayList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+        // Instantiate WebView
+        myWebView = findViewById(R.id.my_webview);
+
+        // Enable Javascript to our WebViewClient
+        myWebView.getSettings().setJavaScriptEnabled(true);
     }
 
     @Override
