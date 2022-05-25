@@ -1,6 +1,9 @@
 package com.example.project;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.webkit.WebView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,7 +28,6 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
     public void showInternalWebPage(){
         myWebView.loadUrl("file:///android_asset/about.html");
-        // TODO: Add your code for showing internal web page here
     }
 
     @Override
@@ -43,12 +45,29 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
-        // Instantiate WebView
         myWebView = findViewById(R.id.my_webview);
-
-        // Enable Javascript to our WebViewClient
         myWebView.getSettings().setJavaScriptEnabled(true);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_internal_web) {
+            showInternalWebPage();
+            Log.d("==>","Will display internal web page");
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 
     @Override
     public void onPostExecute(String json) {
