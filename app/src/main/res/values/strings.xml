@@ -1,10 +1,14 @@
 <resources>
     <string name="app_name">Project</string>
-    <string name="action_internal_web">About us</string>
-    <string name="about_action">About us</string>
+    <string name="action_internal_web">Om oss</string>
+
     <string name="id_action">ID</string>
     <string name="name_action">NAME</string>
     <string name="company_action">COMPANY</string>
     <string name="location_action">LOCATION</string>
     <string name="size_action">SIZE</string>
+
+    <string name="about_action">Om oss</string>
+    <string name="text_action">SIZE</string>
+    <string name="button_action">Tillbaka till startsida</string>
 </resources>
