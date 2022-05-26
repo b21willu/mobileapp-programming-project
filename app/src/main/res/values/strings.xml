@@ -9,6 +9,6 @@
     <string name="size_action">SIZE</string>
 
     <string name="about_action">Om oss</string>
-    <string name="text_action">Denna sida är riktad till de peroner som är intresserade av fotboll generellt och speciellt Sveriges inhemska liga Allsvenskan. Det som går att hitta på sidan är information om allsvenska arenor. Vilka lag som spelar på arenan, var den är placerad samt vilken kapacitet som arenan har. </string>
+    <string name="text_action">Denna sida är riktad till de peroner som är intresserade av fotboll generellt men speciellt för Sveriges inhemska liga Allsvenskan. Det som går att hitta på sidan är information om allsvenska arenor. Vilka lag som spelar på arenan, var den är placerad samt vilken kapacitet som arenan har. </string>
     <string name="button_action">Tillbaka till startsida</string>
 </resources>
